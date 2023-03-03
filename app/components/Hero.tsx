@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Hero() {
 	return (
 		<section
-			id="heroFirst"
+			id="about"
 			className="flex items-center mx-auto my-0 p-0 pt-[100px] h-[100vh] text-left"
 		>
 			<div className="flex flex-col justify-start items-start flex-1">

@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.cyanFilter{
+	filter: invert(93%) sepia(4%) saturate(3124%) hue-rotate(178deg) brightness(116%) contrast(88%);
+}
+
+.cyanFilter:hover{
+	filter: invert(46%) sepia(44%) saturate(3504%) hue-rotate(163deg) brightness(98%) contrast(101%);
+}
+
 ::-webkit-scrollbar {
 	width: 12px;
 }

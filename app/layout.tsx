@@ -17,7 +17,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={spaceGrotesk.className}>
 			<head />
-			<body className="bg-[#1b1f24] text-white">
+			<body className="bg-[#1b1f24] text-white w-full h-full">
 				<Header />
 				{children}
 				<SocialIcons />

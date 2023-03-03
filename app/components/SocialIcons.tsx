@@ -41,7 +41,7 @@ export default function SocialIcons() {
 				<ul className="flex flex-col items-center m-0 p-0 list-none after:list-none after:block after:w-[2px] after:h-[90px] after:bg-slate-400 overflow-hidden">
 					<li className="last-of-type:mb-2 p-[10px]">
 						<a
-							href={'https://www.linkedin.com/in/enea-xharau'}
+							href={'mailto:xharauenea@gmail.com'}
 							target="_blank"
 							rel="noreferrer noopener"
 							className="text-slate-200 hover:text-cyan-400 w-[32px] flex items-center justify-center"

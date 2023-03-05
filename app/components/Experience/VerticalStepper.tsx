@@ -29,19 +29,13 @@ export default function VerticaStepper() {
 		],
 		[]
 	);
-	const [activeStep, setActiveStep] = useState(data.length - 1);
+	const [activeStep, setActiveStep] = useState<number>(0);
 	function activateStep(index: number) {
-		setActiveStep((prev) =>
-			prev === index
-				? prev === data.length - 1
-					? 999999
-					: data.length - 1
-				: index
-		);
+		setActiveStep((prev) => (prev === index ? NaN : index));
 	}
 	return (
-		<div className="h-full w-full pt-[100px]">
-			<div className="flex flex-col justify-start items-start h-full w-full">
+		<div className="h-full w-full flex-1">
+			<div className="flex flex-col justify-start items-start h-full w-full ">
 				{data.map((item, index, array) => {
 					return (
 						<div
@@ -50,23 +44,25 @@ export default function VerticaStepper() {
 							className="flex flex-col"
 						>
 							<div className="flex gap-3 items-center justify-start flex-wrap">
-								<div
-									className={`rounded-[50%] w-8 h-8 ${
-										activeStep === index || activeStep < index
-											? 'bg-green-500'
-											: 'bg-white'
-									}`}
-								></div>
-								<h1 className="text-2xl font-bold whitespace-nowrap">
-									{item.title}
-								</h1>
+								<div className="flex gap-3 items-center">
+									<div
+										className={`rounded-[50%] w-8 h-8 flex-shrink-0 ${
+											activeStep === index || activeStep < index
+												? 'bg-green-500'
+												: 'bg-white'
+										}`}
+									></div>
+									<h1 className="text-2xl font-bold whitespace-nowrap">
+										{item.title}
+									</h1>
+								</div>
 								<span className="w-4 bg-white h-[2px]"></span>
 								<h2 className="font-semibold text-md text-slate-400 ">
 									{item.timespan}
 								</h2>
 							</div>
-							<div className="flex justify-between items-start mt-4 mb-4">
-								<div className="flex items-center justify-center w-[32px] h-full min-h-[120px]">
+							<div className="flex justify-between items-start mt-4 mb-4 h-full">
+								<div className="flex items-center justify-center w-[32px] min-h-full h-full">
 									{(index !== array.length - 1 ||
 										activeStep === index ||
 										activeStep < index) && (
@@ -75,12 +71,12 @@ export default function VerticaStepper() {
 												activeStep === index || activeStep < index
 													? 'bg-green-500'
 													: 'bg-white'
-											} h-full`}
+											} h-full min-h-[120px]`}
 										></div>
 									)}
 								</div>
 								{(activeStep === index || activeStep < index) && (
-									<div className="w-full">
+									<div className="w-full h-full">
 										<ul>
 											{item.description.map((item, index) => (
 												<li key={index} className="flex items-center gap-3">

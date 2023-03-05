@@ -4,7 +4,7 @@ export default function Hero() {
 	return (
 		<section
 			id="about"
-			className="flex items-center mx-auto my-0 p-0 pt-[100px] h-[100vh] text-left"
+			className="flex items-center mx-auto my-0 p-0 pt-[100px] h-full text-left"
 		>
 			<div className="flex flex-col justify-start items-start flex-1">
 				<div className="">
@@ -16,12 +16,12 @@ export default function Hero() {
 					</h1>
 				</div>
 				<div className="">
-					<h2 className="text-slate-500 font-bold text-5xl mb-5">
+					<h2 className="text-slate-400 font-bold text-5xl mb-5">
 						Full-stack developer. Digital magician.
 					</h2>
 				</div>
 				<div className="">
-					<p className="font-bold text-slate-500 w-[50%] max-[400px]:w-[75%]">
+					<p className="font-bold text-slate-300 w-[50%] max-[400px]:w-[75%]">
 						I am a software engineer based in{' '}
 						<a
 							href="https://goo.gl/maps/HaC5635iUfoVzLXe8"
@@ -35,7 +35,7 @@ export default function Hero() {
 				</div>
 				<div className="">
 					<button
-						className="py-2 px-10 text-slate-400 border-slate-400 hover:border-cyan-400 hover:text-cyan-400 border rounded-lg mt-8"
+						className="py-2 px-10 text-slate-200 border-slate-400 hover:border-cyan-400 hover:text-cyan-400 border rounded-lg mt-8"
 						name="contact me button"
 					>
 						<a href="#contact" className="font-bold text-md">

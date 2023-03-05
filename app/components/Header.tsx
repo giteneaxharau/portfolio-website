@@ -1,28 +1,56 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+
 export default function Header() {
+	const ref = useRef(null);
+	const [scrolled, setScrolled] = useState<boolean>(false);
+	useEffect(() => {
+		const listenToScroll = () => {
+			if (window.pageYOffset > 100) {
+				setScrolled(true);
+			} else {
+				setScrolled(false);
+			}
+		};
+		window.addEventListener('scroll', listenToScroll);
+		return () => window.removeEventListener('scroll', listenToScroll);
+	}, []);
+	const headerClassName =
+		'fixed px-12 h-24 top-0 w-full flex justify-between items-center';
 	return (
-		<header className="transparent fixed px-12 h-24 top-0 w-full flex justify-between items-center">
+		<header
+			ref={ref}
+			className={`${headerClassName} ${
+				scrolled
+					? 'transition opacity-0 transform -translate-y-full duration-300 '
+					: 'transition opacity-1 transform translate-y-0 duration-300 '
+			}`}
+		>
 			<nav className="flex items-center justify-between w-full">
 				<div>
 					<a href="/" className="text-2xl font-bold text-white">
 						Enea Xharau
 					</a>
 				</div>
-				<div>
+				<div className="">
 					<ol className="flex items-center justify-between" id="headerlist">
-						{['About', 'Experience', 'Work', 'Contact'].map((tab, index) => (
-							<li
-								key={index}
-								className={`mx-1 relative hover:scale-[1.03]`}
-								id={tab}
-							>
-								<a
-									href={`#${tab.toLowerCase()}`}
-									className="p-1 text-md font-semibold cursor-pointer hover:text-cyan-400"
+						{['About', 'Experience', 'Skills', 'My Work', 'Contact'].map(
+							(tab, index) => (
+								<li
+									key={index}
+									className={`mx-1 relative hover:scale-[1.03]`}
+									id={tab}
 								>
-									{tab}
-								</a>
-							</li>
-						))}
+									<a
+										href={`#${tab.toLowerCase()}`}
+										className="p-1 text-md font-semibold cursor-pointer hover:text-cyan-400"
+									>
+										{tab}
+									</a>
+								</li>
+							)
+						)}
 						<li className="mx-1 relative animate-fade-in-left">
 							<button className="flex items-center font-mono justify-center gap-1 p-1 border-2 rounded-lg hover:border-cyan-400 hover:text-cyan-400">
 								<svg

@@ -37,8 +37,8 @@ export default function SocialIcons() {
 					))}
 				</ul>
 			</div>
-			<div className="fixed bottom-0 right-10 w-10 z-10 max-sm:hidden max-md:hidden">
-				<ul className="flex flex-col items-center m-0 p-0 list-none after:list-none after:block after:w-[2px] after:h-[90px] after:bg-slate-400 overflow-hidden">
+			<div className="fixed top-0 right-5 w-10 z-10 max-sm:hidden max-md:hidden">
+				<ul className="flex flex-col items-center m-0 p-0 list-none before:list-none before:block before:w-[2px] before:h-[90px] before:bg-slate-400 overflow-hidden">
 					<li className="last-of-type:mb-2 p-[10px]">
 						<a
 							href={'mailto:xharauenea@gmail.com'}

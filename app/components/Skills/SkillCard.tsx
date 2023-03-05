@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-interface SkillCardProps {
+export interface SkillCardProps {
 	title: string;
 	description: string;
 	logo: string;
@@ -16,7 +16,7 @@ export default function SkillCard({
 			<div className="w-full h-full flex-auto rounded-t-xl flex items-center justify-center">
 				<Image
 					src={logo}
-					alt={description}
+					alt={title}
 					loading="lazy"
 					width={120}
 					height={120}
@@ -25,10 +25,10 @@ export default function SkillCard({
 				/>
 			</div>
 			<div className="flex flex-col text-left w-full">
-				<h1 className="text-gray-900 text-6xl whitespace-normal flex-wrap">
+				{/* <h1 className="text-gray-900 text-5xl whitespace-normal flex-wrap flex-auto">
 					{title}
-				</h1>
-				<p className="text-gray-900 text-2xl whitespace-normal flex-wrap text-left">
+				</h1> */}
+				<p className="text-gray-900 text-xl whitespace-normal flex-wrap text-left">
 					{description}
 				</p>
 			</div>

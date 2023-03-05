@@ -6,12 +6,12 @@ export default function Hero() {
 			id="about"
 			className="flex items-center mx-auto my-0 p-0 pt-[100px] h-full text-left"
 		>
-			<div className="flex flex-col justify-start items-start flex-1">
+			<div className="flex flex-col justify-start items-start flex-1 flex-wrap">
 				<div className="">
 					<h3 className="text-cyan-400 text-xl font-mono">Hello, my name is</h3>
 				</div>
 				<div className="">
-					<h1 className="text-slate-200 font-bold text-8xl mb-5">
+					<h1 className="text-slate-200 font-bold text-7xl mb-5 flex-1">
 						Enea Xharau.
 					</h1>
 				</div>

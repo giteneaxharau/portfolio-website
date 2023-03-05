@@ -1,10 +1,10 @@
 'use client';
-
 import { useEffect, useRef, useState } from 'react';
 
 export default function Header() {
 	const ref = useRef(null);
 	const [scrolled, setScrolled] = useState<boolean>(false);
+
 	useEffect(() => {
 		const listenToScroll = () => {
 			if (window.pageYOffset > 100) {
@@ -16,8 +16,9 @@ export default function Header() {
 		window.addEventListener('scroll', listenToScroll);
 		return () => window.removeEventListener('scroll', listenToScroll);
 	}, []);
+
 	const headerClassName =
-		'fixed px-12 h-24 top-0 w-full flex justify-between items-center';
+		'fixed px-12 h-24 top-0 w-full flex justify-between items-center overflow-hidden';
 	return (
 		<header
 			ref={ref}
@@ -30,10 +31,10 @@ export default function Header() {
 			<nav className="flex items-center justify-between w-full">
 				<div>
 					<a href="/" className="text-2xl font-bold text-white">
-						Enea Xharau
+						EXH
 					</a>
 				</div>
-				{/* <div className="">
+				<div className="">
 					<ol className="flex items-center justify-between" id="headerlist">
 						{['About', 'Experience', 'Skills', 'My Work', 'Contact'].map(
 							(tab, index) => (
@@ -65,7 +66,7 @@ export default function Header() {
 							</button>
 						</li>
 					</ol>
-				</div> */}
+				</div>
 			</nav>
 		</header>
 	);

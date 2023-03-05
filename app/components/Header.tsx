@@ -33,7 +33,7 @@ export default function Header() {
 						Enea Xharau
 					</a>
 				</div>
-				<div className="">
+				{/* <div className="">
 					<ol className="flex items-center justify-between" id="headerlist">
 						{['About', 'Experience', 'Skills', 'My Work', 'Contact'].map(
 							(tab, index) => (
@@ -65,7 +65,7 @@ export default function Header() {
 							</button>
 						</li>
 					</ol>
-				</div>
+				</div> */}
 			</nav>
 		</header>
 	);

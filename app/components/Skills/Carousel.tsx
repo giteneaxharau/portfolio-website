@@ -9,7 +9,7 @@ interface CarouselProps {
 }
 
 export default function Carousel({ children, length, items }: CarouselProps) {
-	const [active, setActive] = useState(0);
+	const [active, setActive] = useState(NaN);
 	useEffect(() => {
 		const doc = document.getElementById(
 			`${items.find((_, i) => i === active)?.title}`

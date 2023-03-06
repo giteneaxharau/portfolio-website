@@ -5,7 +5,7 @@ export default function Skills() {
 	return (
 		<section
 			id="skills"
-			className="flex flex-col items-center justify-start mx-auto my-0 p-0 pt-28 h-[100vh] text-left"
+			className="flex flex-col items-center justify-start mx-auto my-0 p-0 pt-28 h-full text-left"
 		>
 			<div className="w-full flex items-center self-start gap-8">
 				<span className="w-full h-1 rounded bg-slate-300"></span>

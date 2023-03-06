@@ -14,7 +14,11 @@ export default function Carousel({ children, length, items }: CarouselProps) {
 		const doc = document.getElementById(
 			`${items.find((_, i) => i === active)?.title}`
 		);
-		doc?.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+		doc?.scrollIntoView({
+			behavior: 'smooth',
+			inline: 'start',
+			block: 'center',
+		});
 	}, [active, items]);
 	return (
 		<div className="flex flex-col w-full rounded-lg">
@@ -22,7 +26,11 @@ export default function Carousel({ children, length, items }: CarouselProps) {
 				<button
 					type="button"
 					className="flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-					onClick={() => setActive((prev) => (prev === 0 ? 0 : prev - 1))}
+					onClick={() =>
+						setActive((prev) =>
+							prev === 0 ? 0 : Number.isNaN(prev) ? 0 : prev - 1
+						)
+					}
 				>
 					<span className="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30  group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
 						<svg
@@ -34,9 +42,9 @@ export default function Carousel({ children, length, items }: CarouselProps) {
 							xmlns="http://www.w3.org/2000/svg"
 						>
 							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth="2"
 								d="M15 19l-7-7 7-7"
 							></path>
 						</svg>
@@ -47,7 +55,9 @@ export default function Carousel({ children, length, items }: CarouselProps) {
 					type="button"
 					className="flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
 					onClick={() =>
-						setActive((prev) => (prev === items.length ? 0 : prev + 1))
+						setActive((prev) =>
+							prev === items.length ? 0 : Number.isNaN(prev) ? 1 : prev + 1
+						)
 					}
 				>
 					<span className="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
@@ -60,9 +70,9 @@ export default function Carousel({ children, length, items }: CarouselProps) {
 							xmlns="http://www.w3.org/2000/svg"
 						>
 							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth="2"
 								d="M9 5l7 7-7 7"
 							></path>
 						</svg>

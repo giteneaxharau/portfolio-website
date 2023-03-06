@@ -1,6 +1,7 @@
 import Experience from './components/Experience/Experience';
 import Hero from './components/About/Hero';
 import Skills from './components/Skills/Skills';
+import MyWork from './components/MyWork/MyWork';
 
 export default function Home() {
 	return (
@@ -8,6 +9,7 @@ export default function Home() {
 			<Hero />
 			<Experience />
 			<Skills />
+			<MyWork />
 		</main>
 	);
 }

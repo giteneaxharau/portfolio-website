@@ -2,6 +2,7 @@ import Header from './components/Header';
 import './globals.css';
 import { Space_Grotesk } from '@next/font/google';
 import SocialIcons from './components/SocialIcons';
+import Footer from './components/Footer';
 
 const spaceGrotesk = Space_Grotesk({
 	subsets: ['latin'],
@@ -21,6 +22,7 @@ export default function RootLayout({
 				<Header />
 				{children}
 				<SocialIcons />
+				<Footer />
 			</body>
 		</html>
 	);
